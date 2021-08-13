@@ -2,6 +2,7 @@
 *
 * base64.js
 * <P>Java Script for converting an uint8 array to a base64 string and backwards.</P>
+* <P>A numtseng module <A HREF="https://numtseng.com/modules/base64.js">https://numtseng.com/modules/base64.js</A> 
 *
 * Copyright (c) 2021 by Jonatan Gomez-Perdomo. <br>
 * All rights reserved. See <A HREF="https://github.com/jgomezpe/base64">License</A>. <br>
