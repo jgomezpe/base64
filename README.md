@@ -5,7 +5,13 @@ Java Script for converting an uint8 array to a base64 string and backwards.
 &nbsp;Author: <A HREF="https://disi.unal.edu.co/~jgomezpe/"> Jonatan Gomez-Perdomo </A>
 &nbsp;E-mail: <A HREF="mailto:jgomezpe@unal.edu.co">jgomezpe@unal.edu.co</A>
 
+&nbsp;Ready to use: <A HREF="https://numtseng.com/modules/base64.js">https://numtseng.com/modules/base64.js</A>
+
 &nbsp;Source code: <A HREF="https://github.com/jgomezpe/konekti/">https://github.com/jgomezpe/base64/</A>
+
+
+&nbsp;API documentation: <A HREF="https://numtseng.com/api/base64/">https://numtseng.com/api/base64/</A>
+
 &nbsp;All rights reserved.
 
 <h3>Usage</h3>
