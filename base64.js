@@ -13,7 +13,7 @@
 */
 
 /** Object for coding/decoding uint8 arrays tto/from byte64 strings  */
-class Base64{
+class Base64Class{
     constructor(){
         /**
         * From int to char
@@ -29,10 +29,10 @@ class Base64{
     * Generates the dictionary for decoding a char to int
     */ 
     init(){
-        if( Base64.a2i === undefined ){
-            Base64.a2i = {}
-            for( var k=0; k<Base64.i2a.length; k++ )
-                Base64.a2i[Base64.i2a[k]] = k           
+        if( this.a2i === undefined ){
+            this.a2i = {}
+            for( var k=0; k<this.i2a.length; k++ )
+                this.a2i[this.i2a[k]] = k           
         }        
     }
     
@@ -43,7 +43,7 @@ class Base64{
      * @throws An exception if the string does not represent a valid base64 code 
      */
     decode(str){
-        Base64.init()
+        this.init()
         var end = str.length
         while(end>=0 && str.charAt(end-1)=='=') end--
         if(end<2) throw '·Invalid Base64 string at· ' + end
@@ -57,8 +57,8 @@ class Base64{
         var k=0
         var c=0
         for(var i=0; i<n; i++){
-            left = Base64.a2i[str.charAt(k)]
-            right = Base64.a2i[str.charAt(k+1)]
+            left = this.a2i[str.charAt(k)]
+            right = this.a2i[str.charAt(k+1)]
             if(left===undefined || right===undefined) throw '·Invalid Base64 string at· ' + k
             blob[i] =  (left << control[c][0]) |( right >> control[c][1])
             k+=control[c][2]
@@ -74,7 +74,7 @@ class Base64{
      * @throws An exception if the argument is not a uint8 array 
      */
     encode(blob){
-        Base64.init()
+        this.init()
         if( blob.byteLength === undefined ) throw '·Not a byte array·'
         var str=''
         var m = (blob.length%3)
@@ -85,10 +85,10 @@ class Base64{
         for(var i=0; i<n; i++){
             c=i&3
             switch(c){
-                case 0: str += Base64.i2a[blob[k]>>2]; break;
-                case 1: str += Base64.i2a[((blob[k]&3)<<4) | (blob[k+1]>>4)]; break;
-                case 2: str += Base64.i2a[((blob[k]&15)<<2) | (blob[k+1]>>6)]; break;
-                case 3: str += Base64.i2a[blob[k]&63]; break;
+                case 0: str += this.i2a[blob[k]>>2]; break;
+                case 1: str += this.i2a[((blob[k]&3)<<4) | (blob[k+1]>>4)]; break;
+                case 2: str += this.i2a[((blob[k]&15)<<2) | (blob[k+1]>>6)]; break;
+                case 3: str += this.i2a[blob[k]&63]; break;
             }
             if(c!=0) k++        
         }
@@ -107,7 +107,7 @@ class Base64{
      * @throws An exception if the argument is not a string
      */
     atob(str, encoder=new TextEncoder()){
-        return Base64.enconde(encoder.encode(str))
+        return this.enconde(encoder.encode(str))
     }
 
     /**
@@ -118,7 +118,7 @@ class Base64{
      * @throws An exception if the string does not represent a valid base64 code 
      */
     btoa(str, decoder=new TextDecoder()){
-        return decoder.decode(Base64.decode(str))
+        return decoder.decode(this.decode(str))
     }
 }
 
