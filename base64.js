@@ -13,18 +13,20 @@
 */
 
 /** Object for coding/decoding uint8 arrays tto/from byte64 strings  */
-Base64 ={
-    /**
-     * From int to char
-     */
-    i2a : ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+class Base64{
+    constructor(){
+        /**
+        * From int to char
+        */
+        i2a : ['A','B','C','D','E','F','G','H','I','J','K','L','M',
                      'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                      'a','b','c','d','e','f','g','h','i','j','k','l','m',
                      'n','o','p','q','r','s','t','u','v','v','x','y','z',
-                     '0','1','2','3','4','5','6','7','8','9','+','/'],
+                     '0','1','2','3','4','5','6','7','8','9','+','/']
+    }
    
    /** 
-    * Generates the dictionary for decodign a char to int
+    * Generates the dictionary for decoding a char to int
     */ 
     init(){
         if( Base64.a2i === undefined ){
@@ -32,7 +34,7 @@ Base64 ={
             for( var k=0; k<Base64.i2a.length; k++ )
                 Base64.a2i[Base64.i2a[k]] = k           
         }        
-    },
+    }
     
     /**
      * Decodes a base64 string into a uint8 array if possible
@@ -63,7 +65,7 @@ Base64 ={
             c = (c+1)%3
         } 
         return blob
-    },
+    }
     
     /**
      * Encodes a uint8 array into a base64 string if possible 
@@ -95,7 +97,7 @@ Base64 ={
             m++
         }     
         return str
-    },
+    }
     
     /**
      * Encodes a string into a base64 string if possible 
@@ -106,7 +108,7 @@ Base64 ={
      */
     atob(str, encoder=new TextEncoder()){
         return Base64.enconde(encoder.encode(str))
-    },
+    }
 
     /**
      * Decodes a base64 string into a string if possible
@@ -119,3 +121,6 @@ Base64 ={
         return decoder.decode(Base64.decode(str))
     }
 }
+
+/** Object for coding/decoding uint8 arrays tto/from byte64 strings  */
+Base64 = new Base64Class()
