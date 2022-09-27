@@ -18,10 +18,10 @@ class Base64Class{
         /**
         * From int to char
         */
-        this.i2a : ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+        this.i2a = ['A','B','C','D','E','F','G','H','I','J','K','L','M',
                      'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                      'a','b','c','d','e','f','g','h','i','j','k','l','m',
-                     'n','o','p','q','r','s','t','u','v','v','x','y','z',
+                     'n','o','p','q','r','s','t','u','v','w','x','y','z',
                      '0','1','2','3','4','5','6','7','8','9','+','/']
     }
    
@@ -123,4 +123,4 @@ class Base64Class{
 }
 
 /** Object for coding/decoding uint8 arrays tto/from byte64 strings  */
-Base64 = new Base64Class()
+let Base64 = new Base64Class()
