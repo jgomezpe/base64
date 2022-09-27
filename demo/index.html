@@ -8,16 +8,10 @@
 <body>   
 <div id='main' style='height:100%;width:100%'></div>
 <script>
-
     var base64 = "SGVsbG8gV29ybGQhIDIwMjA="
-    
     var decode = Base64.decode(base64)
-    
     var encode = Base64.encode(decode)
 
-
-
-    // You can try any of the previous functions here, we just set the last one as default.
     document.getElementById('main').innerHTML = "<p>Original base 64 encode byte array (blob): " + base64 + "</p>" +
     "<p>decode blob: " + decode + "</p>" +
     "<p>encode blob: " + encode + "</p>"
