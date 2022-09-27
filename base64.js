@@ -18,7 +18,7 @@ class Base64Class{
         /**
         * From int to char
         */
-        i2a : ['A','B','C','D','E','F','G','H','I','J','K','L','M',
+        this.i2a : ['A','B','C','D','E','F','G','H','I','J','K','L','M',
                      'N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                      'a','b','c','d','e','f','g','h','i','j','k','l','m',
                      'n','o','p','q','r','s','t','u','v','v','x','y','z',
