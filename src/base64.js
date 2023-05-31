@@ -92,7 +92,7 @@ class Base64Class{
             }
             if(c!=0) k++        
         }
-        while(m<4){
+        while(m>0 && m<4){
             str+='='
             m++
         }     
