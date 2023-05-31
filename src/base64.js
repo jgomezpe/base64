@@ -107,7 +107,7 @@ class Base64Class{
      * @throws An exception if the argument is not a string
      */
     atob(str, encoder=new TextEncoder()){
-        return this.enconde(encoder.encode(str))
+        return this.encode(encoder.encode(str))
     }
 
     /**
